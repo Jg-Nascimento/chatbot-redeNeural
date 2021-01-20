@@ -28,7 +28,10 @@ for linha in linhas:
 conversas_id = []
 for conversa in conversas[:-1]:#-1 exclui o ultimo registro
   #print(conversa)
- _conversa = conversa.split(' +++$+++ ')[-1]
+  #replace remove espaços vazios e aspas simples
+ _conversa = conversa.split(' +++$+++ ')[-1][1:-1].replace("'", "").replace(" ", "")
  print(conversa)
-    
+ 
+ conversas_id.append(_conversa.split(","))
+     
 
