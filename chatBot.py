@@ -64,3 +64,48 @@ def limpa_texto(texto):
   texto = re.sub(r"[-()#/@;:<>[]{}~+=?.|,]", "", texto)
   
   return texto
+
+#//limpeza das perguntas e respostas
+
+#percorre todas as perguntas e envia para a função limpa_texto
+perguntas_limpas = []
+for pergunta in perguntas_limpas:
+  perguntas_limpas.append(limpa_texto(pergunta))
+
+#ocorrência de palavras
+palavras_contagem = {}
+for pergunta in perguntas_limpas:
+  #print(pergunta)
+  for palavra in pergunta.split():
+    if palavra not in palavras_contagem:
+      palavras_contagem[palavra] = 1
+    else:
+      palavras_contagem[palavra] += 1
+
+for resposta in respostas_limpas:
+  #print(pergunta)
+  for palavra in resposta.split():
+    if palavra not in palavras_contagem:
+      palavras_contagem[palavra] = 1
+    else:
+      palavras_contagem[palavra] += 1
+
+#relação de palavras não frequentes e tokenização (dois dicionerios)
+limite = 20
+perguntas_palavras_int = {}
+numero_palavra = 0
+
+#retorna a palavra e a ocorrência
+for palavra, contagem in palavras_contagem.items():
+  if contagem >= limite:
+    perguntas_palavras_int[palavra] = numero_palavra
+    numero_palavra += 1
+
+respostas_palavras_int = {}
+numero_palavra = 0
+
+#retorna a palavra e a ocorrência
+for palavra, contagem in palavras_contagem.items():
+  if contagem >= limite:
+    respostas_palavras_int[palavra] = numero_palavra
+    numero_palavra += 1
