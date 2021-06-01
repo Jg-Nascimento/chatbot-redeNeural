@@ -6,10 +6,10 @@ import time
 
 #carregando base de dados
 #abre o arquivo, faz a leitura e pula linha onde tiver \n
-linhas=open('/content/drive/MyDrive/Colab Notebooks/movie_lines.txt', 
+linhas=open('movie_lines.txt', 
               encoding='utf-8',errors='ignore').read().split('\n')
 
-conversas=open('/content/drive/MyDrive/Colab Notebooks/movie_conversations.txt', 
+conversas=open('movie_conversations.txt', 
               encoding='utf-8',errors='ignore').read().split('\n')
 
 #dicionario para mapeamento de id's
@@ -20,16 +20,16 @@ for linha in linhas:
     _linha = linha.split(' +++$+++ ')
     print(linha)
     
-     if len(_linha) == 5:
+    if len(_linha) == 5:
       print (linha[4])
       id_para_linha[_linha[0]] = _linha[4]
 
 #lista de conversas
 conversas_id = []
-for conversa in conversas[:-1]:#-1 exclui o ultimo registro
-
+#-1 exclui o ultimo registro
+for conversa in conversas[:-1]:
   #print(conversa)
-  #replace remove espaços vazios e aspas simples
+#replace remove espaços vazios e aspas simples
  _conversa = conversa.split(' +++$+++ ')[-1][1:-1].replace("'", "").replace(" ", "")
   
  conversas_id.append(_conversa.split(","))
@@ -60,13 +60,16 @@ def limpa_texto(texto):
   texto = re.sub(r"\'re", " are", texto)
   texto = re.sub(r"\'d", " would", texto)
   texto = re.sub(r"won't", "will not", texto)
-  texto = re.sub(r"csn't", "cannot", texto)
+  texto = re.sub(r"can't", "cannot", texto)
   texto = re.sub(r"[-()#/@;:<>[]{}~+=?.|,]", "", texto)
   
   return texto
 
-#//limpeza das perguntas e respostas
-
+'''
+==============================================================
+|++++++++++++ limpeza das perguntas e respostas +++++++++++++|
+==============================================================
+'''
 #percorre todas as perguntas e envia para a função limpa_texto
 perguntas_limpas = []
 for pergunta in perguntas_limpas:
@@ -82,6 +85,7 @@ for pergunta in perguntas_limpas:
     else:
       palavras_contagem[palavra] += 1
 
+respostas_limpas = []
 for resposta in respostas_limpas:
   #print(pergunta)
   for palavra in resposta.split():
@@ -90,7 +94,7 @@ for resposta in respostas_limpas:
     else:
       palavras_contagem[palavra] += 1
 
-#relação de palavras não frequentes e tokenização (dois dicionerios)
+#relação de palavras não frequentes e tokenização (dois dicionários)
 limite = 20
 perguntas_palavras_int = {}
 numero_palavra = 0
@@ -109,3 +113,54 @@ for palavra, contagem in palavras_contagem.items():
   if contagem >= limite:
     respostas_palavras_int[palavra] = numero_palavra
     numero_palavra += 1
+
+#adicionando tokens
+tokens = ['<PAD>', '<EOS>', '<AUT>', '<SOS>']
+
+for token in tokens:
+  perguntas_palavras_int[token] = len(perguntas_palavras_int) + 1
+
+for token in tokens:
+  respostas_palavras_int[token] = len(respostas_palavras_int) + 1
+
+#retorna a chave do indice
+resposta_int_palavras = {p_i: p for p, p_i in respostas_palavras_int.items()}
+
+#adiciona token no final da string <EOS> de cada resposta
+for i in range(len(respostas_limpas)):
+  respostas_limpas[i] += ' <EOS>'
+
+perguntas_para_int = []
+for pergunta in perguntas_limpas:
+  ints = []
+  for palavra in pergunta.split():
+    if palavra not in perguntas_palavras_int:
+      ints.append(perguntas_palavras_int['<OUT>'])
+    else:
+      ints.append(perguntas_palavras_int[palavra])
+
+  perguntas_para_int.append(int)
+
+respostas_para_int = []
+for respostas in respostas_limpas:
+  ints = []
+  for palavra in respostas.split():
+    if palavra not in respostas_palavras_int:
+      ints.append(respostas_palavras_int['<OUT>'])
+    else:
+      ints.append(respostas_palavras_int[palavra])
+
+  respostas_para_int.append(int)
+
+#ordenação das perguntas
+perguntas_limpas_ordenadas[]
+respostas_limpas_ordenadas[]
+
+for tamanho in range(1, 25 + 1):
+  for i in enumerate(perguntas_para_int):
+    #print(i[1])
+    if len(i[1]) == tamanho:
+      perguntas_limpas_ordenadas.append(perguntas_palavras_int[i[0]])
+      respostas_limpas_ordenadas.append(respostas_palavras_int[i[0]])
+
+print("DEBUG")
