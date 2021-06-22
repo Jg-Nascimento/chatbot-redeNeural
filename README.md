@@ -19,19 +19,13 @@
       de chatbots, como por exemplo: a Apple (Siri), a Microsoft (Cortana), o Google (Google Assitant) e a 
       Amazon (Alexa).
      
-
+<img src="https://img.shields.io/github/issues/Jg-Nascimento/chatbot-redeNeural" /> <img src="https://img.shields.io/github/forks/Jg-Nascimento/chatbot-redeNeural"/>
+<img src="https://img.shields.io/github/stars/Jg-Nascimento/chatbot-redeNeural" /> <img src="https://img.shields.io/github/stars/Jg-Nascimento/chatbot-redeNeural" />
  
 ## Technology:
 ### Here are the technologies used in this project.
- 
-> Python
 
-> NLTK
-
-> Keras
-
-> Flask
-
+<img src="https://img.shields.io/badge/-PYTHON-yellowgreen" /> <img src="https://img.shields.io/badge/-NLTK-yellowgreen" /> <img src="https://img.shields.io/badge/-KERAS-yellowgreen" /> <img src="https://img.shields.io/badge/-FLASK-yellowgreen" />
 
 
 ## Services Used
@@ -39,8 +33,6 @@
 * Github
 * heroku
  
- 
-
  
 ## Features
  
@@ -67,13 +59,11 @@
  
  
 ## Versioning
- 
-1.0.0.0
+<img src="https://img.shields.io/badge/VERSION-1.0.0-lightgrey"/>
  
  
 ## Authors
-
-* **Jorge Nascimento**: @jg-nascimento (https://github.com/Jg-Nascimento)
+@jg-nascimento [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/Jg-Nascimento/)](https://github.com/Jg-Nascimento/)
  
 Please follow github and join us!
 Thanks to visiting me and good coding!
