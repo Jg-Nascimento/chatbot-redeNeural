@@ -1,6 +1,9 @@
-<h1 align="center"> Chatbot com Rede Neural Artificial </h1>
+<h1 align="center" > Chatbot com Rede Neural Artificial </h1>
 
-<p><img align="center" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.cbX2iRsqyA1_yDF8R7qxAAHaEA%26pid%3DApi&f=1" style="max-width:100%;"></a></p>
+<div>
+ <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.cbX2iRsqyA1_yDF8R7qxAAHaEA%26pid%3DApi&f=1" 
+      style="max-width:100%;" alt="centered image">
+</div>
 
 
  
