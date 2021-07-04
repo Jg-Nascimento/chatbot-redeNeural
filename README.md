@@ -29,7 +29,7 @@
 ## Technology:
 ### Here are the technologies used in this project.
 
-<img src="https://img.shields.io/badge/-PYTHON-yellowgreen" /> <img src="https://img.shields.io/badge/-NLTK-yellowgreen" /> <img src="https://img.shields.io/badge/-KERAS-yellowgreen" /> <img src="https://img.shields.io/badge/-SEQ2SEQ-yellowgreen" />
+<img src="https://img.shields.io/badge/-PYTHON-yellowgreen" /> <img src="https://img.shields.io/badge/-NLTK-yellowgreen" /> <img src="https://img.shields.io/badge/-KERAS-yellowgreen" /> <img src="https://img.shields.io/badge/-SEQ2SEQ-yellowgreen" /> <img src="https://img.shields.io/badge/-NUMPY-yellowgreen" /> <img src="https://img.shields.io/badge/-TENSORFLOW-yellowgreen" /> <img src="https://img.shields.io/badge/-RE-yellowgreen" />
 
 
 ## Services Used
